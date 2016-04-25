@@ -1,3 +1,5 @@
+
+#this section should be interpreted by Python 3.X
 from tkinter import *
 from tkinter.ttk import *
 import random
@@ -79,7 +81,6 @@ class Snake(threading.Thread):
         if self.food.position==new_snake_point:
             self.points_earned+=1
             self.snake_points.append(new_snake_point)
-            print (len(self.snake_points))
             self.queue.put({"points_earned":self.points_earned})
             self.food.generate_food()
         else:
